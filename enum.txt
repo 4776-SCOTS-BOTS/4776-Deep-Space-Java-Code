@@ -1,0 +1,25 @@
+
+enum DriveSystem
+{
+	TankDrive,
+	ArcadeDrive,
+	CheesyDrive;
+}
+
+
+
+	private DriveSystem currentDriveSystem = DriveSystem.ArcadeDrive;
+
+
+		if (currentDriveSystem == DriveSystem.TankDrive)
+		{
+			m_robotDrive.tankDrive(m_stick.getRawAxis(1), m_stick.getRawAxis(5));
+		}
+		else if (currentDriveSystem == DriveSystem.ArcadeDrive)
+		{
+			m_robotDrive.arcadeDrive(m_stick.getRawAxis(1), m_stick.getRawAxis(4));
+		}
+		else if (currentDriveSystem == DriveSystem.CheesyDrive)
+		{
+			m_robotDrive.curvatureDrive(m_stick.getRawAxis(1), m_stick.getRawAxis(4), m_stick.getRawButton(1));
+		}
