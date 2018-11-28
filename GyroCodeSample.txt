@@ -1,0 +1,14 @@
+//inside import list:
+import edu.wpi.first.wpilibj.ADXRS450_Gyro;
+
+//inside robot class: (make sure the correct CS port is used)
+public ADXRS450_Gyro m_gyro = new ADXRS450_Gyro(SPI.Port.kOnboardCS0);
+
+//inside robot init:
+m_gyro.calibrate();
+
+//inside auto/teleop init:
+m_gyro.reset();
+
+//inside periodic code:
+double angle = m_gyro.getAngle();
